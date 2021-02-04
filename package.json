@@ -1,0 +1,19 @@
+{
+  "name": "reactexpress",
+  "version": "1.0.0",
+  "description": "my first project getting backend talk to frontend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "author": "Atena Razmpoush",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.3.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
