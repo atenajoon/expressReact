@@ -10,10 +10,17 @@ class Members extends Component {
         }
     }
 
+    componentDidMount() {
+        fetch('/api/members')
+            .then(res => res.json())
+            .then(members => this.setState({ members }, () => console.log("members fetched...", members)));
+    }
+
     render() {
         return (
             <div>
                 <h1>Members</h1>
+
             </div>
         );
     }
