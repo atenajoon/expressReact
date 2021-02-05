@@ -4,8 +4,11 @@
   "description": "my first project getting backend talk to frontend",
   "main": "server.js",
   "scripts": {
+    "member-install": "cd member && npm install",
     "start": "node server.js",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "member": "cd member && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run member\""
   },
   "author": "Atena Razmpoush",
   "license": "ISC",
