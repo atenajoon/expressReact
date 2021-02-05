@@ -20,7 +20,11 @@ class Members extends Component {
         return (
             <div>
                 <h1>Members</h1>
-
+                <ul>
+                    {this.state.members.map(member =>
+                        <li key={member.id}>{member.username}</li>
+                    )}
+                </ul>
             </div>
         );
     }

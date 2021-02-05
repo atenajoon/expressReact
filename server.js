@@ -5,9 +5,9 @@ const port = 5000;
 // adding the route:
 app.get('/api/members', (req, res) => {
     const members = [
-        { id: 1, usename: "Ati" },
-        { id: 2, usename: "Babi" },
-        { id: 3, usename: "Nani" }
+        { id: 1, username: "Ati" },
+        { id: 2, username: "Babi" },
+        { id: 3, username: "Nani" }
     ];
 
     res.json(members);
