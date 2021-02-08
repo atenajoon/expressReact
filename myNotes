@@ -1,3 +1,91 @@
+// on the bash shell:
+    - mkdir reactexpress
+    - cd reactexpress
+    - code .
+
+// in VS Code:
+    - Ctrl + ` ->>  Integrated Terminal 
+    - npm init ->>  Createing package.json file (fill up the scripts you need to, like author name, entery point, ...)
+    - (entrypoint: "server.js")
+    
+    - npm i express concurrently
+    - npm i nodemon --save-dev ->> Installing it as a dev dependancy
+                               ->> nodemon runs your application and constanly watches it for development,
+                                   so that when you make changes it updates.
+// in package.json:
+    - remove the "test":...
+    - add:
+        "start": 'node server.js",
+        "server": "nodemon server.js"
+
+// in VSC:
+    - touch server.js
+    - code server.js
+
+// in server.js:
+    - const express = require('express'); 
+    - const app = express();                ->>   bring the express and initialize it
+    - const port = 5000;                    ->>   changing the port to something except 3000
+    - app.get('api/members', (req, res) => {
+        const members = [
+            {id:1, username: "..."},
+            ...
+        ];
+        res.json(members);                  ->>  response to the get request by json
+    });
+
+    - npm run server ->> runs the express app
+
+// in another terminal
+    - npm i -g create-react-app
+    - create-react-app mamber
+
+// in member directory->> in package.json ->> we define our backend and url proxy here
+    -
+        },
+        "proxy": "http://localhost:5000"        ->> preventing CORS issue,
+                                                ->> we can adding "proxy" whenever we wanna access anything in our backend
+
+// in VSC:
+    - cd member
+    - npm start
+
+// in member 
+    =>> scr
+    =>> create ne folder "components" 
+    =>> new folder "members" 
+    =>> file "member.js" and "member.css"
+    
+// in members.js:
+    - create a class component named Members
+    - save the Members component inside of the App.js component   =>> <Members /> & import it
+    - add constructor() & super() methors, and initialize the state = {}
+
+    - add componentDidMount()   =>> runs when component is mounted
+        - fetch('/api/members')
+            .then()             ->> takes the result and map it to res.json()
+            .then()             ->> gives us our data, which we call it "members" and we put it inside the state
+
+    - after setState, we can set a callback or arrow function to console.log
+    - map the members from state to <li>
+
+// in server command line:
+    - Ctrl + C
+
+// in the package.json file of the backend(express):
+    - add a "client" script to make it run automatically
+        "client": "cd member && npm start",
+    - it will start the react server right after the express server
+    - add concurrently to the "dev" script to run both at the same time:
+        "dev": "concurrently \"npm run server\" \"npm run client\""
+
+// in the express directory of bash:
+    - npm run dev
+
+
+
+
+    
     "server": "nodemon server.js",
     "client": "cd client && npm start"
     // or you can do->  "client": "npm start --prefix client"

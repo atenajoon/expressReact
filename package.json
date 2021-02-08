@@ -7,8 +7,8 @@
     "member-install": "cd member && npm install",
     "start": "node server.js",
     "server": "nodemon server.js",
-    "member": "cd member && npm start",
-    "dev": "concurrently \"npm run server\" \"npm run member\""
+    "client": "cd member && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Atena Razmpoush",
   "license": "ISC",
