@@ -38,9 +38,9 @@
 
 // in another terminal
     - npm i -g create-react-app
-    - create-react-app mamber
+    - create-react-app client
 
-// in member directory->> in package.json ->> we define our backend and url proxy here
+// in client directory->> in package.json ->> we define our backend and url proxy here
     -
         },
         "proxy": "http://localhost:5000"        ->> preventing CORS issue,
@@ -50,7 +50,7 @@
     - cd member
     - npm start
 
-// in member 
+// in client 
     =>> scr
     =>> create ne folder "components" 
     =>> new folder "members" 
@@ -74,7 +74,10 @@
 
 // in the package.json file of the backend(express):
     - add a "client" script to make it run automatically
-        "client": "cd member && npm start",
+        "client": "cd client && npm start",
+    or you can do
+        "client": "npm start --prefix client"
+
     - it will start the react server right after the express server
     - add concurrently to the "dev" script to run both at the same time:
         "dev": "concurrently \"npm run server\" \"npm run client\""
@@ -84,8 +87,7 @@
 
 
 
+CRUD Tutorial (Pedro)- ReactJS, NodeJS, MySQL 
+https://www.youtube.com/watch?v=T8mqZZ0r-RA
+https://www.youtube.com/watch?v=3YrOOia3-mo
 
-    
-    "server": "nodemon server.js",
-    "client": "cd client && npm start"
-    // or you can do->  "client": "npm start --prefix client"
