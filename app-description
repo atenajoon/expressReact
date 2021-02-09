@@ -1,0 +1,23 @@
+Users can:
+
+- Create profile(signup),
+- Log in,
+- Log out,
+- Modify profile details
+- Like/Dislike other members
+- See the number of received likes
+
+Profiles have:
+
+- Name
+- Summary
+- Like/Dislike button (for other members)
+- Number of received likes (for the profile owner)
+- Picture
+
+-------------------------------------------
+next week plan with Ena:
+- db tutorial
+- signin, login, logout pages
+- react components' architecture
+- using Authy

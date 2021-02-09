@@ -85,9 +85,106 @@
 // in the express directory of bash:
     - npm run dev
 
+---------------------------------------------------------
 
+// connecting to MySQL:
+
+// in the backend folder:
+    - npm install -S mysql2 knex dotenv
+        =>> mysql2 is our database connector
+        =>> knex is a library, a query builder for js,
+    
+    - create file .gitignore =>> to comment node_modules 
+                                 and avoid updating git for them everytime
+    - create file .env       =>> we comment it in .gitignore,
+                                 it helps us to have separate .env files in every environment
+
+// in .env:
+    - define the database variables
+
+// in the back end folder:
+    - create a "database" folder
+
+// in database folder:
+    - create "mysql.js" file and an "actions" folder
+
+// in mysql.js:
+    - require('dotenv').config();   =>> config() decorates our environment variables
+    - set the connection configuration there, (instantiation)
+    - pass it to knex and return the connection we get from knex as a result
+
+// in actions:
+    - create "db-connect.js"
+
+// in db-connect.js:
+    - require mysql and log the response
+
+    // we are all set to connect the database, 
+    // just need to install it
+
+
+
+
+
+-------------------------------------------
+https://linuxscriptshub.com/uninstall-completely-remove-mysql-ubuntu-16-04/
+
+// Uninstall, remove, reinstall mysql:
+    - sudo apt-get remove --purge mysql*
+    - sudo apt-get purge mysql*
+    - sudo apt-get autoremove
+    - sudo apt-get autoclean
+    - sudo apt-get remove dbconfig-mysql
+    - sudo apt-get dist-upgrade
+    - sudo apt-get install mysql-server
+
+
+OR
+
+https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04
+
+// Install mysql on your machien - working on Ubuntu:
+    - update your package index         =>> sudo apt update
+    - install the mysql-server package  =>> sudo apt install mysql-server
+    - run the included security script  =>> sudo mysql_secure_installation
+    - set a password for the MySQL root user
+
+// to start mysql:
+    - open up the MySQL prompt from your terminal   =>> sudo mysql
+    OR
+    - sudo service mysql start
+        password: A...0!
+    - sudo mysql -u root -p
+        password: root
+    
+// creating database:
+    - create database reactexpress;
+    - show schemas;
+    - exit the MySQL shell  =>> exit    OR  Ctrl+D
+// in the server bash:
+    - node ./database/actions/db-connect.js
+
+
+
+---------------------------------------------------
+
+** changing the password of the user:
+https://stackoverflow.com/questions/39281594/error-1698-28000-access-denied-for-user-rootlocalhost
+in mysql shell:
+    ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
+
+--------------------------------------------
 
 CRUD Tutorial (Pedro)- ReactJS, NodeJS, MySQL 
 https://www.youtube.com/watch?v=T8mqZZ0r-RA
 https://www.youtube.com/watch?v=3YrOOia3-mo
 
+
+DB:
+https://www.youtube.com/watch?v=XuLRKMqozwA
+youtube.com/watch?v=wR6b3FPAQoM
+
+mysql config:
+https://phoenixnap.com/kb/mysql-command-not-found-error
+
+-----------------------------------------------
